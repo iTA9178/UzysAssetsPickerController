@@ -66,7 +66,6 @@
     return library;
 }
 
-
 - (id)init
 {
     self = [super initWithNibName:@"UzysAssetsPickerController" bundle:[NSBundle bundleForClass:[UzysAssetsPickerController class]]];
@@ -76,6 +75,7 @@
     }
     return self;
 }
+
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:ALAssetsLibraryChangedNotification object:nil];
@@ -83,11 +83,13 @@
     self.assetsGroup = nil;
     self.assets = nil;
 }
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -116,6 +118,7 @@
     self.view.clipsToBounds = YES;
     self.orderedSelectedItem = [[NSMutableArray alloc] init];
 }
+
 - (void)initImagePicker
 {
     UzysWrapperPickerController *picker = [[UzysWrapperPickerController alloc] init];
@@ -143,6 +146,7 @@
     }
     self.picker = picker;
 }
+
 - (void)setupLayout
 {
     UzysAppearanceConfig *appearanceConfig = [UzysAppearanceConfig sharedConfig];
@@ -154,8 +158,11 @@
     
     UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 0.5)];
     lineView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.15f];
-    [self.bottomView addSubview:lineView];
+//    [self.bottomView addSubview:lineView];
+    
+    [_preview addSubview:lineView];
 }
+
 - (void)setupGroupPickerview
 {
     __weak typeof(self) weakSelf = self;
@@ -169,6 +176,7 @@
     [self menuArrowRotate];
     
 }
+
 - (void)setupOneMediaTypeSelection
 {
     if(_maximumNumberOfSelectionMedia > 0)
@@ -275,6 +283,7 @@
     _assetsFilter = assetsFilter;
     _curAssetFilterType = type;
 }
+
 #pragma mark - public methods
 + (void)setUpAppearanceConfig:(UzysAppearanceConfig *)config
 {
@@ -298,6 +307,7 @@
     [self.orderedSelectedItem removeAllObjects];
     [self menuArrowRotate];
 }
+
 - (void)changeAssetType:(BOOL)isPhoto endBlock:(voidBlock)endBlock
 {
     if(isPhoto)
@@ -318,6 +328,7 @@
         
     }
 }
+
 - (void)setupGroup:(voidBlock)endblock withSetupAsset:(BOOL)doSetupAsset
 {
     if (!self.assetsLibrary)
@@ -432,6 +443,7 @@
     };
     [self.assetsGroup enumerateAssetsWithOptions:NSEnumerationReverse usingBlock:resultsBlock];
 }
+
 - (void)reloadData
 {
     [self.collectionView reloadData];
@@ -439,9 +451,18 @@
                             .count] forState:UIControlStateNormal];
     [self showNoAssetsIfNeeded];
 }
+
 - (void)setAssetsCountWithSelectedIndexPaths:(NSArray *)indexPaths
 {
-    [self.btnDone setTitle:[NSString stringWithFormat:@"%lu",(unsigned long)indexPaths.count] forState:UIControlStateNormal];
+//    [self.btnDone setTitle:[NSString stringWithFormat:@"%lu",(unsigned long)indexPaths.count] forState:UIControlStateNormal];
+    if (indexPaths.count > 0) {
+        _preview.startPintuButton.enabled = YES;
+        _preview.startPintuButton.alpha = 1.0f;
+    }else {
+        _preview.startPintuButton.enabled = NO;
+        _preview.startPintuButton.alpha = 0.7f;
+    }
+    [_preview.startPintuButton setTitle:[NSString stringWithFormat:@"%lu",(unsigned long)indexPaths.count] forState:UIControlStateNormal];
 }
 
 #pragma mark - Asset Exception View
@@ -675,6 +696,7 @@
         }];
     }
 }
+
 #pragma mark - Helper methods
 - (NSDictionary *)queryStringToDictionaryOfNSURL:(NSURL *)url
 {
@@ -888,6 +910,7 @@
         
     });
 }
+
 #pragma mark - Property
 - (void)setTitle:(NSString *)title
 {
@@ -897,6 +920,7 @@
     [self.btnTitle setTitleEdgeInsets:UIEdgeInsetsMake(5, 0, 0, 0)];
     [self.btnTitle layoutIfNeeded];
 }
+
 - (void)menuArrowRotate
 {
     [UIView animateWithDuration:0.35 animations:^{
@@ -912,6 +936,7 @@
     }];
     
 }
+
 #pragma mark - Control Action
 - (IBAction)btnAction:(id)sender {
     
@@ -981,6 +1006,7 @@
         [self changeAssetType:NO endBlock:nil];
     }
 }
+
 - (void)saveAssetsAction:(NSURL *)assetURL error:(NSError *)error isPhoto:(BOOL)isPhoto {
     if(error)
         return;
@@ -1122,9 +1148,8 @@
     }
     
     [picker dismissViewControllerAnimated:YES completion:^{}];
-    
-    
 }
+
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     [picker dismissViewControllerAnimated:YES completion:^{
@@ -1138,18 +1163,22 @@
 {
     return UIStatusBarStyleDefault;
 }
+
 - (UIViewController *)childViewControllerForStatusBarHidden
 {
     return nil;
 }
+
 - (BOOL)prefersStatusBarHidden
 {
     return NO;
 }
+
 -(NSUInteger)supportedInterfaceOrientations
 {
     return UIInterfaceOrientationMaskPortrait;
 }
+
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
 {
     return UIInterfaceOrientationPortrait;

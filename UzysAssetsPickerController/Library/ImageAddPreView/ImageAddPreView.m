@@ -25,53 +25,64 @@
     _imageassets = [NSMutableArray array];
     _imageEditViewArray = [NSMutableArray array];
     
-    self.backgroundColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1];
-    _selectBeforeLab = [[UILabel alloc] initWithFrame:CGRectMake(2*D_Pending_Width,
-                                                                2*D_Pending_Width,
-                                                                self.bounds.size.width - 100,
-                                                                20)];
-    [_selectBeforeLab setTextColor:[UIColor colorWithHexString:@"#c9c9c9"]];
-    [_selectBeforeLab setFont:[UIFont systemFontOfSize:13.0f]];
-    [self addSubview: _selectBeforeLab];
-    [_selectBeforeLab setTextAlignment:NSTextAlignmentLeft];
-    [_selectBeforeLab setText:D_LocalizedCardString(@"Choose")];
+//    self.backgroundColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1];
+    self.backgroundColor = [UIColor whiteColor];
+//    _selectBeforeLab = [[UILabel alloc] initWithFrame:CGRectMake(2*D_Pending_Width,
+//                                                                2*D_Pending_Width,
+//                                                                self.bounds.size.width - 100,
+//                                                                20)];
+//    [_selectBeforeLab setTextColor:[UIColor darkGrayColor]];
+////    [_selectBeforeLab setTextColor:[UIColor colorWithHexString:@"#c9c9c9"]];
+//    [_selectBeforeLab setFont:[UIFont systemFontOfSize:13.0f]];
+//    [self addSubview: _selectBeforeLab];
+//    [_selectBeforeLab setTextAlignment:NSTextAlignmentLeft];
+//    [_selectBeforeLab setText:D_LocalizedCardString(@"Choose")];
+//    
+//    _selectNumLab = [[UILabel alloc] initWithFrame:CGRectMake(2*D_Pending_Width,
+//                                                                2*D_Pending_Width,
+//                                                                self.bounds.size.width - 100,
+//                                                                20)];
+//    [[_selectBeforeLab setTextColor:[UIColor darkGrayColor]]; setTextColor:[UIColor colorWithHexString:@"#eb4d47"]];
+//    [_selectBeforeLab setTextColor:[UIColor darkGrayColor]];
+//    [_selectNumLab setTextAlignment:NSTextAlignmentCenter];
+//    
+//    [_selectNumLab setFont:[UIFont systemFontOfSize:13.0f]];
+//    [self addSubview: _selectNumLab];
+//    _selectafterLab = [[UILabel alloc] initWithFrame:CGRectMake(2*D_Pending_Width,
+//                                                                2*D_Pending_Width,
+//                                                                self.bounds.size.width - 100,
+//                                                                20)];
+//    [_selectafterLab setTextColor:[UIColor colorWithHexString:@"#c9c9c9"]];
+//    [_selectafterLab setTextColor:[UIColor darkGrayColor]];
+//    [_selectafterLab setFont:[UIFont systemFontOfSize:13.0f]];
+//    [self addSubview: _selectafterLab];
+//    [_selectafterLab setTextAlignment:NSTextAlignmentRight];
+//    [_selectafterLab setText:D_LocalizedCardString(@"PhotoCount")];
     
-    _selectNumLab = [[UILabel alloc] initWithFrame:CGRectMake(2*D_Pending_Width,
-                                                                2*D_Pending_Width,
-                                                                self.bounds.size.width - 100,
-                                                                20)];
-    [_selectNumLab setTextColor:[UIColor colorWithHexString:@"#eb4d47"]];
-    [_selectNumLab setTextAlignment:NSTextAlignmentCenter];
-    
-    [_selectNumLab setFont:[UIFont systemFontOfSize:13.0f]];
-    [self addSubview: _selectNumLab];
-    _selectafterLab = [[UILabel alloc] initWithFrame:CGRectMake(2*D_Pending_Width,
-                                                                2*D_Pending_Width,
-                                                                self.bounds.size.width - 100,
-                                                                20)];
-    [_selectafterLab setTextColor:[UIColor colorWithHexString:@"#c9c9c9"]];
-    [_selectafterLab setFont:[UIFont systemFontOfSize:13.0f]];
-    [self addSubview: _selectafterLab];
-    [_selectafterLab setTextAlignment:NSTextAlignmentRight];
-    [_selectafterLab setText:D_LocalizedCardString(@"PhotoCount")];
-    
-    int widthBtn = 70, heightBtn = 38;
-    _startPintuButton =  [[UIButton alloc] initWithFrame:CGRectMake(self.bounds.size.width - widthBtn - D_Pending_Width,
-                                                                    D_Pending_Width,
-                                                                    widthBtn,
-                                                                    heightBtn)];
-    [_startPintuButton setBackgroundColorNormal:[UIColor colorWithHexString:@"#1fbba6"] highlightedColor:[UIColor colorWithHexString:@"#03917e"]];
-    [_startPintuButton setTitle:D_LocalizedCardString(@"card_meitu_complete") forState:UIControlStateNormal];
+    int widthBtn = 55, heightBtn = 30;
+//    _startPintuButton =  [[UIButton alloc] initWithFrame:CGRectMake(self.bounds.size.width - widthBtn - D_Pending_Width,
+//                                                                    D_Pending_Width,
+//                                                                    widthBtn,
+//                                                                    heightBtn)];
+    _startPintuButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    _startPintuButton.frame = CGRectMake(self.bounds.size.width - widthBtn - D_Pending_Width, D_Pending_Width, widthBtn, heightBtn);
+//    [_startPintuButton setBackgroundColorNormal:[UIColor colorWithHexString:@"#1fbba6"] highlightedColor:[UIColor colorWithHexString:@"#03917e"]];
+//    [_startPintuButton setTitle:D_LocalizedCardString(@"card_meitu_complete") forState:UIControlStateNormal];
+    [_startPintuButton setBackgroundColor:[UIColor redColor]];
+    [_startPintuButton setImage:[UIImage imageNamed:@"uzysAP_ico_upload_done"] forState:UIControlStateNormal];//UzysAssetPickerController.bundle/uzysAP_ico_upload_done.png
     [_startPintuButton addTarget:self action:@selector(startPintuButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [_startPintuButton.titleLabel setFont:[UIFont systemFontOfSize:13.f]];
-    [_startPintuButton.layer setCornerRadius:2.f];
+    [_startPintuButton.layer setCornerRadius:15.f];
     [_startPintuButton setClipsToBounds:YES];
+    _startPintuButton.enabled = NO;
+    _startPintuButton.alpha = 0.7f;
     [self addSubview:_startPintuButton];
     
     _contentView = [[UIScrollView alloc] initWithFrame:CGRectMake(0,
                                                                   44,
                                                                   self.bounds.size.width,
                                                                   D_ImageEditView_Height)];
+    _contentView.backgroundColor = [UIColor redColor];
     [self addSubview:_contentView];
     [self.selectNumLab setText:[NSString stringWithFormat:@"%lu",(unsigned long)[_imageassets count]]];
     [self reselectNumFrame];

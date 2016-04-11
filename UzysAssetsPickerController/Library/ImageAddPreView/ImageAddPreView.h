@@ -30,7 +30,6 @@
 
 @end
 
-
 @protocol  ImageAddPreViewDelegate <NSObject>
 
 - (void)startPintuAction:(ImageAddPreView *)sender;
