@@ -10,6 +10,7 @@
 #import "UzysWrapperPickerController.h"
 #import "UzysGroupPickerView.h"
 #import <ImageIO/ImageIO.h>
+#import "ImageAddPreView.h"
 
 @interface UzysAssetsPickerController ()<UICollectionViewDataSource,UICollectionViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 //View
@@ -28,6 +29,8 @@
 @property (nonatomic, strong) UzysWrapperPickerController *picker;
 @property (nonatomic, strong) UzysGroupPickerView *groupPicker;
 //@property (nonatomic, strong) UzysGroupPickerViewController *groupPicker;
+
+@property (nonatomic, strong) ImageAddPreView   *preview;
 
 @property (nonatomic, strong) ALAssetsGroup *assetsGroup;
 @property (nonatomic, strong) NSMutableArray *groups;
@@ -92,6 +95,7 @@
     [self initVariable];
     [self initImagePicker];
     [self setupOneMediaTypeSelection];
+    [self setupImageAddPreView];
     
     __weak typeof(self) weakSelf = self;
     [self setupGroup:^{
@@ -245,6 +249,26 @@
 
     [self.view insertSubview:self.collectionView atIndex:0];
 }
+
+- (void)setupImageAddPreView {
+    if (_preview == nil)
+    {
+        _preview = [[ImageAddPreView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 135, SCREEN_WIDTH, 135)];
+        [self.view addSubview:_preview];
+    }
+    
+    [_preview setAlpha:0];
+    [UIView animateWithDuration:0.2
+                          delay:0.1
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         [_preview setAlpha:1];
+                     } completion:^(BOOL finished) {
+                         
+                     }];
+    [_preview setHidden:NO];
+}
+
 #pragma mark - Property
 - (void)setAssetsFilter:(ALAssetsFilter *)assetsFilter type:(NSInteger)type
 {
@@ -613,6 +637,7 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     ALAsset *selectedAsset = [self.assets objectAtIndex:indexPath.item];
+    [_preview addImageWith:selectedAsset];
     [self.orderedSelectedItem addObject:selectedAsset];
     [self setAssetsCountWithSelectedIndexPaths:collectionView.indexPathsForSelectedItems];
 }
@@ -621,6 +646,7 @@
 {
     ALAsset *deselectedAsset = [self.assets objectAtIndex:indexPath.item];
     
+    [_preview deletePintuAction:deselectedAsset];
     [self.orderedSelectedItem removeObject:deselectedAsset];
     [self setAssetsCountWithSelectedIndexPaths:collectionView.indexPathsForSelectedItems];
 }

@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		515B3A071CBB93CE00791577 /* ImageAddPreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 515B3A001CBB93CE00791577 /* ImageAddPreView.m */; };
+		515B3A081CBB93CE00791577 /* ImageEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 515B3A031CBB93CE00791577 /* ImageEditView.m */; };
+		515B3A091CBB93CE00791577 /* JBCroppableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 515B3A061CBB93CE00791577 /* JBCroppableView.m */; };
+		515B3A161CBB951900791577 /* UIButton+Help.m in Sources */ = {isa = PBXBuildFile; fileRef = 515B3A0D1CBB951900791577 /* UIButton+Help.m */; };
+		515B3A171CBB951900791577 /* UIColor+Help.m in Sources */ = {isa = PBXBuildFile; fileRef = 515B3A0F1CBB951900791577 /* UIColor+Help.m */; };
+		515B3A181CBB951900791577 /* UIImage+Help.m in Sources */ = {isa = PBXBuildFile; fileRef = 515B3A111CBB951900791577 /* UIImage+Help.m */; };
+		515B3A191CBB951900791577 /* LoadingViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 515B3A151CBB951900791577 /* LoadingViewManager.m */; };
+		515B3A1C1CBB961300791577 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 515B3A1B1CBB961300791577 /* MBProgressHUD.m */; };
 		95080AE419CC508900E69F29 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95080AE319CC508900E69F29 /* Launch Screen.xib */; };
 		953E13B719A2CAE30012B4D9 /* UzysAssetPickerController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 953E13B619A2CAE30012B4D9 /* UzysAssetPickerController.bundle */; };
 		956BBB55193460220017396E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956BBB54193460220017396E /* AVFoundation.framework */; };
@@ -47,6 +55,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		515B39FF1CBB93CE00791577 /* ImageAddPreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAddPreView.h; sourceTree = "<group>"; };
+		515B3A001CBB93CE00791577 /* ImageAddPreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageAddPreView.m; sourceTree = "<group>"; };
+		515B3A021CBB93CE00791577 /* ImageEditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageEditView.h; sourceTree = "<group>"; };
+		515B3A031CBB93CE00791577 /* ImageEditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageEditView.m; sourceTree = "<group>"; };
+		515B3A051CBB93CE00791577 /* JBCroppableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBCroppableView.h; sourceTree = "<group>"; };
+		515B3A061CBB93CE00791577 /* JBCroppableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBCroppableView.m; sourceTree = "<group>"; };
+		515B3A0C1CBB951900791577 /* UIButton+Help.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Help.h"; sourceTree = "<group>"; };
+		515B3A0D1CBB951900791577 /* UIButton+Help.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Help.m"; sourceTree = "<group>"; };
+		515B3A0E1CBB951900791577 /* UIColor+Help.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Help.h"; sourceTree = "<group>"; };
+		515B3A0F1CBB951900791577 /* UIColor+Help.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Help.m"; sourceTree = "<group>"; };
+		515B3A101CBB951900791577 /* UIImage+Help.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Help.h"; sourceTree = "<group>"; };
+		515B3A111CBB951900791577 /* UIImage+Help.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Help.m"; sourceTree = "<group>"; };
+		515B3A121CBB951900791577 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		515B3A141CBB951900791577 /* LoadingViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingViewManager.h; sourceTree = "<group>"; };
+		515B3A151CBB951900791577 /* LoadingViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingViewManager.m; sourceTree = "<group>"; };
+		515B3A1A1CBB961300791577 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		515B3A1B1CBB961300791577 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		95080AE319CC508900E69F29 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		953E13B619A2CAE30012B4D9 /* UzysAssetPickerController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UzysAssetPickerController.bundle; sourceTree = "<group>"; };
 		956BBB54193460220017396E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -116,6 +141,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		515B39FE1CBB93CE00791577 /* ImageAddPreView */ = {
+			isa = PBXGroup;
+			children = (
+				515B39FF1CBB93CE00791577 /* ImageAddPreView.h */,
+				515B3A001CBB93CE00791577 /* ImageAddPreView.m */,
+			);
+			path = ImageAddPreView;
+			sourceTree = "<group>";
+		};
+		515B3A011CBB93CE00791577 /* ImageEditView */ = {
+			isa = PBXGroup;
+			children = (
+				515B3A021CBB93CE00791577 /* ImageEditView.h */,
+				515B3A031CBB93CE00791577 /* ImageEditView.m */,
+			);
+			path = ImageEditView;
+			sourceTree = "<group>";
+		};
+		515B3A041CBB93CE00791577 /* JBCroppableView */ = {
+			isa = PBXGroup;
+			children = (
+				515B3A051CBB93CE00791577 /* JBCroppableView.h */,
+				515B3A061CBB93CE00791577 /* JBCroppableView.m */,
+			);
+			path = JBCroppableView;
+			sourceTree = "<group>";
+		};
+		515B3A0A1CBB951900791577 /* Categorys */ = {
+			isa = PBXGroup;
+			children = (
+				515B3A0B1CBB951900791577 /* Helper */,
+			);
+			path = Categorys;
+			sourceTree = "<group>";
+		};
+		515B3A0B1CBB951900791577 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				515B3A0C1CBB951900791577 /* UIButton+Help.h */,
+				515B3A0D1CBB951900791577 /* UIButton+Help.m */,
+				515B3A0E1CBB951900791577 /* UIColor+Help.h */,
+				515B3A0F1CBB951900791577 /* UIColor+Help.m */,
+				515B3A101CBB951900791577 /* UIImage+Help.h */,
+				515B3A111CBB951900791577 /* UIImage+Help.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		515B3A131CBB951900791577 /* LoadingViewManager */ = {
+			isa = PBXGroup;
+			children = (
+				515B3A1A1CBB961300791577 /* MBProgressHUD.h */,
+				515B3A1B1CBB961300791577 /* MBProgressHUD.m */,
+				515B3A141CBB951900791577 /* LoadingViewManager.h */,
+				515B3A151CBB951900791577 /* LoadingViewManager.m */,
+			);
+			path = LoadingViewManager;
+			sourceTree = "<group>";
+		};
 		95F4435218AB4AEF0088FC13 = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +281,12 @@
 		95F4439318AB4B840088FC13 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				515B3A0A1CBB951900791577 /* Categorys */,
+				515B3A121CBB951900791577 /* Constants.h */,
+				515B3A131CBB951900791577 /* LoadingViewManager */,
+				515B39FE1CBB93CE00791577 /* ImageAddPreView */,
+				515B3A011CBB93CE00791577 /* ImageEditView */,
+				515B3A041CBB93CE00791577 /* JBCroppableView */,
 				953E13B619A2CAE30012B4D9 /* UzysAssetPickerController.bundle */,
 				95F443B118AB716E0088FC13 /* UzysWrapperPickerController.h */,
 				95F443B218AB716E0088FC13 /* UzysWrapperPickerController.m */,
@@ -323,12 +413,20 @@
 				95F4439D18AB57B30088FC13 /* UzysAssetsViewCell.m in Sources */,
 				95F4436B18AB4AEF0088FC13 /* main.m in Sources */,
 				CCE0A1C519AC197F00A5BE3A /* UIImage+UzysExtension.m in Sources */,
+				515B3A161CBB951900791577 /* UIButton+Help.m in Sources */,
 				95F443BF18AC606B0088FC13 /* UzysGroupPickerView.m in Sources */,
 				95F4437518AB4AEF0088FC13 /* uzysViewController.m in Sources */,
+				515B3A091CBB93CE00791577 /* JBCroppableView.m in Sources */,
+				515B3A081CBB93CE00791577 /* ImageEditView.m in Sources */,
 				95F443B318AB716E0088FC13 /* UzysWrapperPickerController.m in Sources */,
 				95F4436F18AB4AEF0088FC13 /* uzysAppDelegate.m in Sources */,
+				515B3A191CBB951900791577 /* LoadingViewManager.m in Sources */,
 				95F4439718AB4BBA0088FC13 /* UzysAssetsPickerController.m in Sources */,
+				515B3A1C1CBB961300791577 /* MBProgressHUD.m in Sources */,
+				515B3A071CBB93CE00791577 /* ImageAddPreView.m in Sources */,
 				95F443C218AC62D10088FC13 /* UzysGroupViewCell.m in Sources */,
+				515B3A181CBB951900791577 /* UIImage+Help.m in Sources */,
+				515B3A171CBB951900791577 /* UIColor+Help.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
