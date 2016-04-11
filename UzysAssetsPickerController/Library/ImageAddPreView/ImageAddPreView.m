@@ -82,7 +82,7 @@
                                                                   44,
                                                                   self.bounds.size.width,
                                                                   D_ImageEditView_Height)];
-    _contentView.backgroundColor = [UIColor redColor];
+//    _contentView.backgroundColor = [UIColor redColor];
     [self addSubview:_contentView];
     [self.selectNumLab setText:[NSString stringWithFormat:@"%lu",(unsigned long)[_imageassets count]]];
     [self reselectNumFrame];
